@@ -25,7 +25,7 @@ async function xs_search(addr, addr2){
     for (const c of chars){
         startTime = new Date();
         try{
-            var response = await fetch(addr+'H')
+            var response = await fetch(addr+c)
         }
         catch (error) {
             elapsed = (new Date())-startTime;
